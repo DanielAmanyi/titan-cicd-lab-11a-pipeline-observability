@@ -65,6 +65,7 @@ jobs:
       - name: verify promoted artifact
         run: |
           set -euo pipefail
+          ls -lh dist/
           test -f dist/calculator-1.0.0-py3-none-any.whl
           test -f dist/calculator-1.0.0.tar.gz
           test -f dist/checksums.txt
