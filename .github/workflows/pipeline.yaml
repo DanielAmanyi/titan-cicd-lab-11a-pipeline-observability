@@ -25,8 +25,8 @@ jobs:
       - name: Build Package
         run: |
           echo "Starting package build..."
-          python -m build
-          echo "Package build completed."
+          exit 1
+
 
       - name: Verify sha256 checksum
         run: |
