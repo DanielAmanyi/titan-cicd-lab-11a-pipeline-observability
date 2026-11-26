@@ -74,6 +74,8 @@ jobs:
           test -f dist/checksums.txt
           ls -lh dist/
           sha256sum -c dist/checksums.txt
+      - name: Demonstrate Notice Annotation
+        run: echo "::notice::Beginning deployment"
       - name: simulate staging deployment
         run: |
           echo "Simulating staging deployment..."
