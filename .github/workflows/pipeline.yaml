@@ -94,6 +94,22 @@ jobs:
           echo "Workflow: $GITHUB_WORKFLOW"
           echo "Run ID: $GITHUB_RUN_ID"
           echo "Run Attempt: $GITHUB_RUN_ATTEMPT"
+      - name: Write Deployment Log
+        run: |
+          echo "Staging deployment completed successfully." > deployment.log
+          echo "Commit: $GITHUB_SHA" >> deployment.log
+          echo "Actor: $GITHUB_ACTOR" >> deployment.log
+          echo "Workflow: $GITHUB_WORKFLOW" >> deployment.log
+          echo "Run ID: $GITHUB_RUN_ID" >> deployment.log
+          echo "Run Attempt: $GITHUB_RUN_ATTEMPT" >> deployment.log
+
+      - name: Upload Deployment Evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: deployment-metadata
+          path: deployment.log
+          if-no-files-found: error
+
 
 
 
