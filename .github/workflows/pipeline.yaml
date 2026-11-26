@@ -25,6 +25,7 @@ jobs:
       - name: Build Package
         run: |
           python -m build
+          exit 1
 
 
       - name: Verify sha256 checksum
