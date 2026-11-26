@@ -22,9 +22,12 @@ jobs:
       - name: install build dependencies
         run: |
           pip install build
-      - name: Build the package
+      - name: Build Package
         run: |
-          python -m build 
+          echo "Starting package build..."
+          python -m build
+          echo "Package build completed."
+
       - name: Verify sha256 checksum
         run: |
           sha256sum dist/* > dist/checksums.txt
