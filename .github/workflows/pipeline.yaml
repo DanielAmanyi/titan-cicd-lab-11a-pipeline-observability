@@ -87,6 +87,13 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "- Environment: Staging" >> "$GITHUB_STEP_SUMMARY"
           echo "- Status: Success" >> "$GITHUB_STEP_SUMMARY"
+      - name: Deployment Metadata
+        run: |
+          echo "Commit: $GITHUB_SHA"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Workflow: $GITHUB_WORKFLOW"
+          echo "Run ID: $GITHUB_RUN_ID"
+          echo "Run Attempt: $GITHUB_RUN_ATTEMPT"
 
 
 
