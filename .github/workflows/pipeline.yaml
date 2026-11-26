@@ -81,6 +81,13 @@ jobs:
           echo "Simulating staging deployment..."
       - name: Demonstrate Error Annotation
         run: echo "::error::Deployment failed"
+      - name: Deployment Summary
+        run: |
+          echo "## Deployment Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Environment: Staging" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Status: Success" >> "$GITHUB_STEP_SUMMARY"
+
 
 
   deploy-production:
