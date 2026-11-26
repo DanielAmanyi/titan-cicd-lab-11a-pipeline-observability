@@ -79,6 +79,9 @@ jobs:
       - name: simulate staging deployment
         run: |
           echo "Simulating staging deployment..."
+      - name: Demonstrate Error Annotation
+        run: echo "::error::Deployment failed"
+
 
   deploy-production:
     runs-on: ubuntu-latest
