@@ -2,7 +2,7 @@ name: pipeline observability
 on:
   push:
     branches:
-      - "**"
+      - "**""
   pull_request:
     branches:
       - main
@@ -24,8 +24,7 @@ jobs:
           pip install build
       - name: Build Package
         run: |
-          echo "Starting package build..."
-          exit 1
+          python -m build
 
 
       - name: Verify sha256 checksum
